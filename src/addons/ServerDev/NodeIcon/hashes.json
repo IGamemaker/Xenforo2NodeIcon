@@ -1,0 +1,14 @@
+{
+    "src/addons/ServerDev/NodeIcon/addon.json": "2901ddc01e92da111b3a80aa39318302a55ee117efad5cdc0538c5ccb8ecbbb4",
+    "src/addons/ServerDev/NodeIcon/Listener.php": "39aaa5cfe4efa80b7340f8ac873083304a0ee81bbc010836dd4aab8835c90f6f",
+    "src/addons/ServerDev/NodeIcon/Setup.php": "61e9109bc461b76b3631dfe2efc7cc3eb2b15fbd4723354d2a7e900423df7325",
+    "src/addons/ServerDev/NodeIcon/XF/Admin/Controller/AbstractNode.php": "d4c97c31da113b2f48ecd3943054bdfe3eb7b5f91038e55ac5267d91c0c801f1",
+    "src/addons/ServerDev/NodeIcon/XF/Admin/Controller/Category.php": "4cece0ae040ca47d5debc17472321b2b4f94b2c7f3e5393f1ec92d50d00474df",
+    "src/addons/ServerDev/NodeIcon/XF/Admin/Controller/Forum.php": "c81abdd55f81b6eca19bf3f797c6699a689e8bb5ce670ed402be8771fa12c506",
+    "src/addons/ServerDev/NodeIcon/XF/Admin/Controller/LinkForum.php": "66f06b422bdb9619aa358f2e028e773802f824c033baf47bfe09e0dbc48ab52c",
+    "src/addons/ServerDev/NodeIcon/XF/Admin/Controller/Page.php": "18985a8157f981ab8a494bf451fae2111d331aba7fd211c75a14c314fc032ce6",
+    "src/addons/ServerDev/NodeIcon/_data/class_extensions.xml": "c15152ee33f38ede3ecea530330cf3e76efcc068f31889b7f39d6e23ae2bdbfd",
+    "src/addons/ServerDev/NodeIcon/_data/code_event_listeners.xml": "c7dac37b9c10719da995f2bb5de8736b0c59cce544044f04484591f2c19c788e",
+    "src/addons/ServerDev/NodeIcon/_data/templates.xml": "8bbe6211889ba8fb58be44265d7bf346f9a3edf9850e3e91f11c5d097d8c7971",
+    "src/addons/ServerDev/NodeIcon/_data/template_modifications.xml": "41594110836cf16e8bae0ece1310cd4e970d9fac70422cd68103e2e8e8937a25"
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="admin" template="node_edit_macros" modification_key="add_fa_icon" description="Add Fontawesome icon input" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:checkboxrow>
+		<xf:option name="node[display_in_list]" selected="$node.display_in_list"
+			label="{{ phrase('display_in_node_list') }}"
+			hint="{{ phrase('if_unselected_users_will_not_see_this_node_in_list') }}" />
+	</xf:checkboxrow>]]></find>
+    <replace><![CDATA[$0
+
+	<xf:textboxrow name="node[fa_icon]" value="{$node.fa_icon}"
+		label="Fontawesome Icon"
+		hint="{{phrase('optional')}}"
+		explain="Paste icon name here, if you want change node icon. Custom styles may not support this feature"
+		dir="ltr" />]]></replace>
+  </modification>
+  <modification type="public" template="node_list.less" modification_key="node_icon_ext" description="Add extended node-icon" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[.node-icon]]></find>
+    <replace><![CDATA[<xf:include template="node_list_ext.less"/>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="node_list_category" modification_key="add_custom_node_icon_category" description="Replace to Custom Node Icon for List" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<span class="node-icon" aria-hidden="true"><i></i></span>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<span class="node-icon-ext" aria-hidden="true"><i class="fa fa-{$node.fa_icon}"></i></span>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_category" modification_key="add_custom_node_icon_category2" description="Replace to Custom Node Icon for Menu" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('categories', $node) }}" class="subNodeLink subNodeLink--category {{ $extras.hasNew ? 'subNodeLink--unread' : '' }}">{$node.title}</a>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<a href="{{ link('categories', $node) }}" class="subNodeLink-ext fa-{$node.fa_icon} {{ $extras.hasNew ? 'subNodeLink--unread' : '' }}">{$node.title}</a>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_forum" modification_key="add_custom_node_icon_forum" description="Replace to Custom Node Icon for List" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<span class="node-icon" aria-hidden="true"><i></i></span>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<span class="node-icon-ext" aria-hidden="true"><i class="fa fa-{$node.fa_icon}"></i></span>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_forum" modification_key="add_custom_node_icon_forum2" description="Replace to Custom Node Icon for Menu" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('forums', $node) }}" class="subNodeLink subNodeLink--forum {{ $extras.hasNew ? 'subNodeLink--unread' : '' }}">{$node.title}</a>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<a href="{{ link('forums', $node) }}" class="subNodeLink-ext fa-{$node.fa_icon} {{ $extras.hasNew ? 'subNodeLink--unread' : '' }}">{$node.title}</a>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_link_forum" modification_key="add_custom_node_icon_linkforum" description="Replace to Custom Node Icon for List" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<span class="node-icon" aria-hidden="true"><i></i></span>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<span class="node-icon-ext" aria-hidden="true"><i class="fa fa-{$node.fa_icon}"></i></span>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_link_forum" modification_key="add_custom_node_icon_linkforum2" description="Replace to Custom Node Icon for Menu" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('link-forums', $node) }}" class="subNodeLink subNodeLink--link">{$node.title}</a>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<a href="{{ link('link-forums', $node) }}" class="subNodeLink-ext fa-{$node.fa_icon}">{$node.title}</a>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_page" modification_key="add_custom_node_icon_page" description="Replace to Custom Node Icon for List" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<span class="node-icon" aria-hidden="true"><i></i></span>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<span class="node-icon-ext" aria-hidden="true"><i class="fa fa-{$node.fa_icon}"></i></span>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="node_list_page" modification_key="add_custom_node_icon_page2" description="Replace to Custom Node Icon for Menu" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('pages', $node) }}" class="subNodeLink subNodeLink--page">{$node.title}</a>]]></find>
+    <replace><![CDATA[<xf:if is="{$node.fa_icon}">
+	<a href="{{ link('pages', $node) }}" class="subNodeLink-ext fa-{$node.fa_icon}">{$node.title}</a>
+<xf:else/>
+	$0
+</xf:if>]]></replace>
+  </modification>
+</template_modifications>
